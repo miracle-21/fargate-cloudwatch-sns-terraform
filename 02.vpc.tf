@@ -63,6 +63,18 @@ resource "aws_subnet" "private" {
   }
 }
 
+resource "aws_subnet" "db" {
+  count             = var.count_db_subnets
+  vpc_id            = aws_vpc.vpc.id
+  cidr_block        = "10.0.${count.index + 4}.0/24"
+  availability_zone = "${var.region}${count.index == 0 ? "a" : "c"}"
+
+  tags = {
+    Name = "${var.name}-db-${format("%03d", count.index + 1)}"
+  }
+}
+
+
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.vpc.id
 
