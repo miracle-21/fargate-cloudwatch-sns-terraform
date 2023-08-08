@@ -64,3 +64,10 @@
 ### 4. NLB에 ACM 인증서 등록
 - `var.tf`에 등록된 변수 `ACM_ARN` 값에 따라 nginx controller 배포
 ![](image-2.png)
+
+### 5. ArgoCD로 서비스 자동 배포
+- `bastion.tf` 배포 시 ArgoCD 자동 설치
+![](image-4.png)
+
+- 로그인 후 ArgoCD로 서비스 자동 배포
+![](image-5.png)
