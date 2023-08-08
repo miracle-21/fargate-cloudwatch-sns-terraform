@@ -3,6 +3,8 @@
 ## AWS Architecture
 ![](https://blog.kakaocdn.net/dn/oZf6t/btsqaOVMFL4/qQvh47Bmgr1xjWHI5uafl1/img.png)
 
+</br>
+
 ## 목적
 - Fargate에 웹/앱 서비스 배포
 - Fargate(web - was) - RDS 연동으로 3tier 아키텍처 구축
@@ -10,6 +12,8 @@
 - CloudWatch Container Insights로 EKS 모니터링
 - EKS Pod CPU Utilization 및 Memory Utilization 에 따른 SNS 알림
 - ACM인증을 통한 Nginx Ingress(Network LoadBalancer)
+
+</br>
 
 ## 구성
 
@@ -24,6 +28,8 @@
 | 06. bastion.tf | kubenetes 및 AWS CLI 설치된 bastion 생성
 | 07. rds.tf | MariaDB RDS 생성
 | 08. sns.tf | CloudWatch 메트릭, SNS 주제, SNS 구독 대상 지정
+
+</br>
 
 ## 테스트
 ### 1. EKS 모니터링을 위한 Container Insights
