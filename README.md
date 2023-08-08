@@ -45,14 +45,22 @@
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1be6d548-d848-4188-be45-102bfc850bf9%2FUntitled.png?table=block&id=19be1a0a-79be-4923-beae-6ce1793ada94&spaceId=cc6b48d6-be76-4361-8bea-8b30f3dbb173&width=2000&userId=a76a5c56-e9bb-4960-9bde-6c74de610921&cache=v2)
 
 
+### 2. EKA Pod 부하테스트 및 오토스케일링 테스트
+- (Jmeter)로드발란서를 타깃으로 1초에 500명씩 800번 연속 접속
+![](image-3.png)
 
-### 2. CPU와 메모리 사용량에 따른 SNS 알림
+- 부하 증가에 따라 pod 개수가 2개에서 3개로 증가
+![](https://velog.velcdn.com/images/miracle-21/post/1e7c7823-8528-42d8-9b55-7c6820e18e37/image.gif)
+
+
+
+### 3.  CPU와 메모리 사용량에 따른 SNS 알림
 - pod cpu utilization 경보 발생
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffb038882-0036-4964-85a9-673bc6988a96%2FUntitled.png?table=block&id=790f1cfc-5857-4897-9216-00c3e239d341&spaceId=cc6b48d6-be76-4361-8bea-8b30f3dbb173&width=2000&userId=a76a5c56-e9bb-4960-9bde-6c74de610921&cache=v2)
 
 - 설정한 대상의 이메일 주소로 알림 수신 확인
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc15d9dcf-ff46-4474-8939-49f616358b5a%2FUntitled.png?table=block&id=e04b4d5b-f00c-497d-9078-468f60b665d1&spaceId=cc6b48d6-be76-4361-8bea-8b30f3dbb173&width=2000&userId=a76a5c56-e9bb-4960-9bde-6c74de610921&cache=v2)
 
-### 3. NLB에 ACM 등록
+### 4. NLB에 ACM 인증서 등록
 - `var.tf`에 등록된 변수 `ACM_ARN` 값에 따라 nginx controller 배포
 ![](image-2.png)
