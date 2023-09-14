@@ -28,7 +28,7 @@ cd /home/ec2-user/ && git clone https://github.com/miracle-21/yaml_file.git
 sed -i "s\ACM_ARN\${ACM_ARN}\g" /home/ec2-user/yaml_file/ingress-controller.yaml
 sudo -u ec2-user kubectl apply -f /home/ec2-user/yaml_file/ingress-controller.yaml
 sudo -u ec2-user kubectl apply -f /home/ec2-user/yaml_file/ingress.yaml
-deploy metrics-server
+# deploy metrics-server
 git clone https://github.com/kubernetes-sigs/metrics-server.git
 sudo -u ec2-user kubectl apply -k /home/ec2-user/metrics-server/manifests/base/
 # cloudwatch
