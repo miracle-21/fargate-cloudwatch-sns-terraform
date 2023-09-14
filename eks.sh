@@ -32,7 +32,6 @@ sudo -u ec2-user kubectl apply -f /home/ec2-user/yaml_file/ingress.yaml
 git clone https://github.com/kubernetes-sigs/metrics-server.git
 sudo -u ec2-user kubectl apply -k /home/ec2-user/metrics-server/manifests/base/
 # cloudwatch
-sudo -u ec2-user kubectl apply -f /home/ec2-user/yaml_file/ingress.yaml
 sed -i 's/{{cluster_name}}/'${cluname}'/;s/{{region_name}}/'${region}'/;s/{{http_server_toggle}}/"'${FluentBitHttpServer}'"/;s/{{http_server_port}}/"'${FluentBitHttpPort}'"/;s/{{read_from_head}}/"'${FluentBitReadFromHead}'"/;s/{{read_from_tail}}/"'${FluentBitReadFromTail}'"/' /home/ec2-user/yaml_file/fluent-bit.yaml
 sudo -u ec2-user kubectl apply -f /home/ec2-user/yaml_file/fluent-bit.yaml
 # argoCD
